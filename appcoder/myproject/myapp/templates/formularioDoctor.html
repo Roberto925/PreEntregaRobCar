@@ -10,7 +10,7 @@
     {% extends 'padre.html' %}}
     {% load static %}
     {% block contenidoQueCambia %}
-        <form action="/formularioDoctor/" method="POST">{% csrf_token %}
+        <form action="formularioDoctor" method="POST">{% csrf_token %}
             
             <p>Apellido: <input type="text" name="apellido"></p>
             <p>Especialidad: <input type="text" name="especialidad"></p>

@@ -9,6 +9,6 @@ urlpatterns = [
     path ('formularioPaciente', views.formularioPaciente, name="FormularioPaciente"),
     path ('formularioTurno', views.formularioTurno, name="FormularioTurno"),
     path ('formularioDoctor', views.formularioDoctor, name="FormularioDoctor"),
-    path ('busquedaDoctor', views.busquedaDoctor, name="BusquedaDoctor"),
-    path ('buscar/',views.buscar),
+    path ('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
+    path ('buscar',views.buscar),
 ]

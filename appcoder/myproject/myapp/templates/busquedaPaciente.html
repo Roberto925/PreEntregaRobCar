@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Busquedad Pacientes</title>
+</head>
+<body>
+    {% extends 'padre.html' %}
+    {% load static %}
+    {% block contenidoQueCambia %}
+    <h1>Ingrese Nombre del Paciente: </h1>
+        <form action="buscar" methode="GET">
+            <input type="text" name="nombre" id="nombre">
+            <input type="submit" value="buscar">
+        </form>
+        {% endblock %}
+</body>
+</html>

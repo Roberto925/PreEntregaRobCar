@@ -54,17 +54,26 @@ def formularioTurno(request):
         
     return render(request, "formularioTurno.html",)
 
-def busquedaDoctor(request):
-    return render(request, 'busquedaDoctor.html')
+def busquedaPaciente(request):
+    return render(request, 'busquedaPaciente.html')
 
 def buscar(request):
-    if request.GET['especialidad']:
-        especialidad= request.GET['especialidad']
-        doctor=Doctor.objects.filter(especilidad__iconteins= especialidad)
-
-        return render(request, 'resultadoBusqueda.html', {"doctor": doctor, "especialidad": especialidad})
-    else:
-        respuesta="No enviaste Datos."
     
+    if request.GET['nombre']:
+        nombre=request.GET['nombre']
+        pacientes= Paciente.objects.filter(nombre__icontains=nombre)
+        context={'pacientes':pacientes}
+        return render(request,'resultado.html',context)
+    else:
+
+    #    especialidad= request.GET['especialidad']
+    #    doctor=Doctor.objects.filter(especilidad__iconteins= especialidad)
+
+    #    return render(request, 'resultadoBusqueda.html', {"doctor": doctor, "especialidad": especialidad})
+    #else:
+    #    respuesta="No enviaste Datos."
+    
+    #return HttpResponse(respuesta)
+        respuesta= "No se encontro datos"
     return HttpResponse(respuesta)
 # Create your views here.

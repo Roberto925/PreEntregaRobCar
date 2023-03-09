@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacientes</tittle>
+    <title>Resultado Busqueda</title>
 </head>
 <body>
-    
-
     {% extends 'padre.html' %}
     {% load static %}
     {% block contenidoQueCambia %}
-    <a class="navbar-brand" href="formularioPaciente"><h1>Registrar Paciente</h1></a>
-    <a class="navbar-brand" href="busquedaPaciente"><h1>Buscar Paciente</h1></a>
+    {% if pacientes %}
+    <h2>Resultados de búsqueda:</h2>
+    <ul>
+    {% for a in pacientes %}
+        <li>{{ a.nombre }}</li>
+        <li>{{ a.apellido }}</li>
+        <li>{{ a.obraSocial }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
     {% endblock %}
 </body>
 </html>
