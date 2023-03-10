@@ -16,7 +16,7 @@ def formularioPaciente(request):
     if request.method=='POST':
         miFormulario=FormularioPaciente(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             informacion=miFormulario.cleaned_data
             paciente= Paciente(nombre=informacion['nombre'],apellido=informacion['apellido'],obraSocial=informacion['obraSocial'])
             paciente.save()
@@ -30,7 +30,7 @@ def formularioDoctor(request):
     if request.method=='POST':
         miFormulario=FormularioDoctor(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             informacion=miFormulario.cleaned_data
             doctor= Doctor(nombre=informacion['nombre'],apellido=informacion['apellido'],especialidad=informacion['especialidad'])
             doctor.save()
@@ -44,7 +44,7 @@ def formularioTurno(request):
     if request.method=='POST':
         miFormulario=FormularioTurno(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             informacion=miFormulario.cleaned_data
             turno= Turnos(nomPaciente=informacion['nomPaciente'],fecha=informacion['fecha'],especial=informacion['especial'])
             turno.save()
